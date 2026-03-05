@@ -5,11 +5,11 @@ import '../../../../model/songs/song.dart';
 import '../../../states/player_state.dart';
 
 class LibraryViewModel extends ChangeNotifier {
-  // --- Injected dependencies ---
+  // injected dependencies 
   final SongRepository _songRepository;
   final PlayerState _playerState;
 
-  // --- Internal state ---
+  // internal state
   List<Song> _songs = [];
 
   LibraryViewModel({
@@ -33,8 +33,6 @@ class LibraryViewModel extends ChangeNotifier {
 
   bool isPlaying(Song song) => _playerState.currentSong == song;
 
-  bool get hasCurrentSong => _playerState.currentSong != null;
-
   void play(Song song) {
     _playerState.start(song);
   }
@@ -44,7 +42,7 @@ class LibraryViewModel extends ChangeNotifier {
   }
 
  void _onPlayerStateChanged() {
-    // When player state changes, notify our own listeners (the UI)
+    // When player state changes, notify the ui
     notifyListeners();
   }
 

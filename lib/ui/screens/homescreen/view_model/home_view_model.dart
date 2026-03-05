@@ -6,12 +6,12 @@ import '../../../../model/songs/song.dart';
 import '../../../states/player_state.dart';
 
 class HomeViewModel extends ChangeNotifier {
-  // --- Injected dependencies ---
+  // injected dependencies
   final SongRepository _songRepository;
   final UserHistoryRepository _userHistoryRepository;
   final PlayerState _playerState;
 
-  // --- Internal state ---
+  // internal state
   List<Song> _recentSongs = [];
   List<Song> _recommendedSongs = [];
 
